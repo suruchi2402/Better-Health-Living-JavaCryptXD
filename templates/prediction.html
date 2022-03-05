@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html >
+<html>
 <!--From https://codepen.io/frytyler/pen/EGdtg-->
+
 <head>
   <meta charset="UTF-8">
   <title>ML API</title>
   <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
@@ -18,51 +19,79 @@
 </head>
 
 <body>
-<nav class="navbar navbar-expand-sm navbar-light bg-light mb-3">
-  <div class="container">
-    <a class="nabvar-brand" href="#">Better Health and Living</a>
-    <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="home.html">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="home.html#about">About</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="home.html#services">Services</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="home.html#testimonials">Testimonials</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="home.html/#team">Team</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="home.html#contact">Contact</a>
-        </li>
-      </ul>
+  <nav class="navbar navbar-expand-sm navbar-light bg-light mb-3">
+    <div class="container">
+      <a class="nabvar-brand" href="#">Better Health and Living</a>
+      <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="home.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="home.html#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="home.html#services">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="home.html#testimonials">Testimonials</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="home.html/#team">Team</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="http://127.0.0.1:5500/templates/login.html">login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="home.html#contact">Contact</a>
+          </li>
+        </ul>
+      </div>
     </div>
-  </div>
-</nav>
- <div class="login">
-    <h3>Your Score : {{ data }} </h3>
+  </nav>
+  <div class="login container">
+    <h3 class="alert alert-info">Your Score : {{ data }} </h3>
     {% if data > 5 %}
-    <h3>Consultation with psychiatrist required</h3>
+    <h3 class="alert alert-danger">Consultation with psychiatrist required</h3>
     {% else %}
-    <h3>Mentally Fit :)</h3>
+    <h3 class="alert alert-success">No immediate consultion is required </h3>
     {% endif %}
     <br><br>
- </div>
-
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-  integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-  integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
-  integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+  </div>
+  <div class="container">
+    <h4><center>Keep a track of your mood using our <a href={{url_for("download_file")}}>Chart</a></center></h4>
+  </div>
+  <div class="container">
+    <center>
+      <h3>Scale used for Checking:</h3>
+    </center>
+  </div>
+  <div class="container">
+    <img
+      src="https://2.bp.blogspot.com/-505vRqt1zU4/XHMLKJuf-5I/AAAAAAAAIWg/tqyX_ALBN4gLh-J4WfsL3Qw2vqZA5dAJgCLcBGAs/s1600/Mental%2BHealth%2BPain%2BScale.jpg"
+      class="center">
+  </div>
+  <style>
+    .center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 40%;
+      height: 25%;
+    }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
+    integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+    crossorigin="anonymous"></script>
 </body>
+
 </html>

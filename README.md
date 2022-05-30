@@ -3,6 +3,8 @@ Our website covers most of the aspect  and parameters which are mentioned in the
 We have made a websites which predict mental health based on self assessment, parent assessment , teacher assessment and past history  using machine learning algorithms. We have 15 questions  for self assessment , 10 questions for parent and teacher assessment and 6 questions  based on past history. Apart from that we have implemented chat boat feature by which we are helping the user to use this website. Also added login feature and download csv file to track your daily mental record. 
 We have applied Random forest classification to predict mental score.
 
+Full demo: https://www.youtube.com/watch?v=VMnl90_OlFs
+
 Data Set Description
 Student : Columns-15 , Label-present , Total column -16 
 Parents : Columns-10 , Label-present , Total column -11
